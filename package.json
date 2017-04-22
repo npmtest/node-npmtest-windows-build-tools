@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-windows-build-tools",     "homepage": "https://github.com/npmtest/node-npmtest-windows-build-tools",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-windows-build-tools.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [windows-build-tools (v1.2.1)](https://github.com/felixrieseberg/windows-build-tools#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-windows-build-tools.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-windows-build-tools) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-windows-build-tools.svg)](https://travis-ci.org/npmtest/node-npmtest-windows-build-tools)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-windows-build-tools",
+    "keywords": [
+        "coverage",
+        "test",
+        "windows-build-tools"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_windows_build_tools.js",
+    "name": "npmtest-windows-build-tools",
+    "nameAlias": "npmtest_windows_build_tools",
+    "nameOriginal": "npmtest-windows-build-tools",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-windows-build-tools.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
